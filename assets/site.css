@@ -1,4 +1,4 @@
-/* The Cookiee Club v2 concept. One responsive layout for every screen. */
+/* Twelve Cookies v2 concept. One responsive layout for every screen. */
 :root{
   --ground:#ECE8E6; --paper:#FFFFFF; --cream:#F4EFE9; --ink:#160C0C; --muted:#5A4846;
   --crimson:#A51C30; --crimson-d:#861426; --pink:#F7A8A0; --pink-l:#FBDCD6; --hero:#F4A9A4;
@@ -783,3 +783,9 @@ img[src*="img/p/moulds_0"]{object-fit:contain!important;background:#F7EDDB!impor
  .grid.cards-2 .sub{padding:3px 2px 0;margin:0!important;font-size:14px}
  .grid.cards-2 .tag{font-size:10px!important;top:10px!important;left:10px!important;padding:5px 9px!important}}
 @media(max-width:640px){.grid.cards-2 .tag.out{top:auto!important;bottom:10px!important;left:10px!important;right:auto!important;border-radius:99px}}
+/* Twelve Cookies wordmark (rebrand, 1 Nov) */
+.logo img{width:auto!important;height:66px!important}
+@media (max-width:900px){.logo img{height:50px!important}}
+.fbrand img{width:auto!important;height:84px!important}
+.fbrand{--wm:1}
+footer.site .fbrand img{width:220px!important;max-width:100%;height:auto!important;object-fit:contain}

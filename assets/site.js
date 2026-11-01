@@ -1,4 +1,4 @@
-/* The Cookiee Club v2 concept: cart, drawer, product pages, box builder, forms.
+/* Twelve Cookies v2 concept: cart, drawer, product pages, box builder, forms.
    Prototype only: in Shopify the cart, stock and checkout come from the platform. */
 (function () {
   'use strict';

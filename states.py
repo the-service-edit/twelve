@@ -39,7 +39,7 @@ sold = st_hero('sold', 'Sold', 'out.', 's_soldout.jpg', 'A hand holding a bitten
                'Thank you so, so much. The next restock opens Sunday at 7pm Sydney time.',
                'Counting down to the next restock…', 'sunday', 'Tell me first',
                'One email when the shop opens. Nothing else unless you join the club.',
-               'Next restock · Sunday 7pm', 5, kick='The Cookiee Club is') + f'''
+               'Next restock · Sunday 7pm', 5, kick='Twelve is') + f'''
 <section class="st-ordered"><div class="wrap">
   <span class="st-tick" aria-hidden="true">{icon('check', 22, 2.4)}</span>
   <div><b>Ordered tonight? You’re all set.</b><p>Your order confirmation is in your inbox now, and tracking comes as soon as your box is posted. Can’t see it? Check your junk folder, then flick us a message.</p></div>
@@ -50,7 +50,7 @@ sold = st_hero('sold', 'Sold', 'out.', 's_soldout.jpg', 'A hand holding a bitten
   <div class="st-flgrid">{back_cards}</div>
 </div></section>
 '''
-page('sold-out.html', 'Sold out tonight · The Cookiee Club', sold,
+page('sold-out.html', 'Sold out tonight · Twelve Cookies', sold,
      'Tonight’s cookies are gone. The next restock opens Sunday at 7pm Sydney time.', '',
      band_items=['Sold out tonight', 'Next restock Sunday 7pm Sydney time', 'Get the email, don’t miss out', 'Baked to order', 'Nut &amp; egg free'])
 
@@ -58,12 +58,12 @@ page('sold-out.html', 'Sold out tonight · The Cookiee Club', sold,
 fav = [F[i] for i in ['caramello-koala', 'mini-mm', 'fairy-bread', 'cinnamon-scroll']]
 come = ''.join(f'<a class="st-fl" href="shop.html">{flav_img(f, "", studio=True)}<span class="tag">Back 6 Dec</span><b>{e(f["name"])}</b></a>' for f in fav)
 come += ''.join(f'<a class="st-fl st-myst" href="#st-email"><span class="ph">{flav_img(F[i], "", studio=True)}<i aria-hidden="true">?</i></span><span class="tag">New for Christmas</span><b>Top secret</b></a>' for i in ['gingerbread-white-choc', 'santas-mix'])
-closed = st_hero('closed', 'On a', 'break.', 's_closed.jpg', 'An open Cookiee Club mailer box with hot pink tissue and a thank you sticker',
+closed = st_hero('closed', 'On a', 'break.', 's_closed.jpg', 'An open Twelve Cookies mailer box with hot pink tissue and a thank you sticker',
                  'Back Sunday 6 December, <em>7pm.</em>',
                  'We’re closed from 16 November to rest up and get the kitchen ready for Christmas. Thank you so, so much for an incredible few months.',
                  'Counting down to Christmas…', '2026-12-06T19:00', 'Get the reopening email',
                  'The list sees the Christmas flavours first.', 'Back 6 Dec · 7pm Sydney', 40,
-                 tag='<span class="st-tag">Back 6 Dec</span>', kick='The Cookiee Club is') + f'''
+                 tag='<span class="st-tag">Back 6 Dec</span>', kick='Twelve is') + f'''
 <section class="st-ordered"><div class="wrap">
   <span class="st-tick" aria-hidden="true">{icon('check', 22, 2.4)}</span>
   <div><b>Ordered before 16 November? It’s on its way.</b><p>Every order placed before the break is baked and posted as normal, and tracking comes as soon as your box is posted. Messages are a little slower while we’re away.</p></div>
@@ -74,7 +74,7 @@ closed = st_hero('closed', 'On a', 'break.', 's_closed.jpg', 'An open Cookiee Cl
   <div class="st-flgrid">{come}</div>
 </div></section>
 '''
-page('closed.html', 'On a break until 6 December · The Cookiee Club', closed,
+page('closed.html', 'On a break until 6 December · Twelve Cookies', closed,
      'We’re closed from 16 November and back on 6 December at 7pm Sydney time with Christmas.', '',
      band_items=['On a break until 6 December', 'Christmas reopening 6 Dec, 7pm Sydney time', 'Get the reopening email', 'Mum’s recipe', 'Nut &amp; egg free'])
 print('state pages built')

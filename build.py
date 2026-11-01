@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds The Cookiee Club v2 concept as static HTML pages.
+"""Builds Twelve Cookies v2 concept as static HTML pages.
 Run: python3 build.py   (writes into this folder)"""
 import json, os, re, html
 
@@ -48,7 +48,7 @@ def page(path, title, body, desc, active='', extra_head='', band_items=None):
     B = '../' * depth
     nav = ''.join(f'<a href="{B}{h}"{" aria-current=\"page\"" if h == active else ""}>{t}</a>' for h, t in NAV)
     band = ('<span>Baked to order</span><span>Posted in 2 to 4 business days</span><span>Nut &amp; egg free</span>'
-            '<span>$16.20 express, Australia wide</span><span>Mum’s recipe</span>')
+            '<span>$16.20 express, Australia wide</span><span>12 flavours. One box.</span><span>Mum’s recipe</span>')
     if band_items: band = ''.join(f'<span>{x}</span>' for x in band_items)
     doc = f'''<!doctype html>
 <html lang="en-AU">
@@ -59,7 +59,7 @@ def page(path, title, body, desc, active='', extra_head='', band_items=None):
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
 <meta name="theme-color" content="#F7A8A0">
-<link rel="icon" href="{B}img/logo_old.png">
+<link rel="icon" href="{B}img/favicon_twelve.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
@@ -69,7 +69,7 @@ def page(path, title, body, desc, active='', extra_head='', band_items=None):
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="{B}index.html" aria-label="The Cookiee Club home"><img src="{B}img/logo_old.png" alt="The Cookiee Club" width="84" height="84"></a>
+    <a class="logo" href="{B}index.html" aria-label="Twelve Cookies home"><img src="{B}img/logo_twelve.png" alt="Twelve Cookies" width="1222" height="607"></a>
     <nav class="nav" id="main-nav" aria-label="Main">{nav}</nav>
     <div class="hdr-actions">
       <a class="icon-btn" href="{B}cart.html" data-open-cart aria-label="Open cart">{icon('bag', 20, 2)}<span class="cart-count" data-n="0">0</span></a>
@@ -85,13 +85,13 @@ def page(path, title, body, desc, active='', extra_head='', band_items=None):
 </main>
 <footer class="site">
   <div class="wrap fcols">
-    <div class="fbrand"><img src="{B}img/logo_old.png" alt="The Cookiee Club" width="96" height="96"><p>Nut and egg free cookies, baked to order from Mum’s recipe by sisters Ruby and Rachel. Posted Australia wide.</p>
-      <div class="fsocial"><a class="icon-btn" href="https://www.instagram.com/thecookieeclub_/" aria-label="The Cookiee Club on Instagram">{icon('insta', 22, 2)}</a><a class="icon-btn" href="https://www.tiktok.com/@rubyrosedemiroski" aria-label="Ruby on TikTok">{icon('tiktok', 22, 2)}</a></div></div>
+    <div class="fbrand"><img src="{B}img/logo_twelve_cream.png" alt="Twelve Cookies" width="1222" height="607"><p>Nut and egg free cookies, baked to order from Mum’s recipe by sisters Ruby and Rachel. Posted Australia wide.</p>
+      <div class="fsocial"><a class="icon-btn" href="https://www.instagram.com/thecookieeclub_/" aria-label="Twelve Cookies on Instagram">{icon('insta', 22, 2)}</a><a class="icon-btn" href="https://www.tiktok.com/@rubyrosedemiroski" aria-label="Ruby on TikTok">{icon('tiktok', 22, 2)}</a></div></div>
     <div><h3>Shop</h3><ul><li><a href="{B}build-a-box.html?size=12">Box of 12</a></li><li><a href="{B}build-a-box.html?size=6">Box of 6</a></li><li><a href="{B}products/early-christmas-release.html">Early Christmas Release</a></li><li><a href="{B}products/jam-donut-box.html">Jam Donut Box</a></li><li><a href="{B}products/gluten-free-range.html">Gluten Free Range</a></li><li><a href="{B}products/the-little-cookiee-club.html">Little Cookiee Club</a></li><li><a href="{B}products/the-imperfect-box.html">Imperfect Box</a></li></ul></div>
     <div><h3>Help</h3><ul><li><a href="{B}delivery.html">Delivery &amp; shipping</a></li><li><a href="{B}refunds.html">Refunds &amp; damaged orders</a></li><li><a href="{B}faq.html">FAQ</a></li><li><a href="{B}contact.html">Contact us</a></li></ul></div>
     <div><h3>The club</h3><ul><li><a href="{B}our-kitchen.html">Our kitchen &amp; allergens</a></li><li><a href="{B}drops.html">Drops &amp; calendar</a></li><li><a href="{B}corporate.html">Corporate &amp; events</a></li><li><a href="{B}contact.html">Contact us</a></li></ul></div>
   </div>
-  <div class="wrap legal"><span>© 2026 The Cookiee Club</span><span>Prices in AUD</span><a href="{B}privacy.html">Privacy</a><a href="{B}refunds.html">Refunds</a><a href="{B}delivery.html">Shipping</a><a href="{B}terms.html">Terms</a></div>
+  <div class="wrap legal"><span>© 2026 Twelve Cookies</span><span>Prices in AUD</span><a href="{B}privacy.html">Privacy</a><a href="{B}refunds.html">Refunds</a><a href="{B}delivery.html">Shipping</a><a href="{B}terms.html">Terms</a></div>
 </footer>
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-label="Your cart" aria-hidden="true">
@@ -255,7 +255,7 @@ home = f'''
   <div class="hero-after"><p>Mum’s recipe, baked fresh in small batches by two sisters. Nut and egg free, out the door in 2 to 4 days.</p><a class="btn" href="build-a-box.html">Build your box</a></div>
 </section>
 
-<section class="proof" aria-label="Why the Cookiee Club"><div class="wrap">
+<section class="proof" aria-label="Why Twelve Cookies"><div class="wrap">
   <div class="pi">{icon('heart', 30)}<div><b>Nut &amp; egg free kitchen</b><span>No nuts in the house, no eggs in the recipes</span></div></div>
   <div class="pi">{icon('clock', 30)}<div><b>Posted in 2 to 4 days</b><span>Baked to order, then express post</span></div></div>
   <div class="pi">{icon('truck', 30)}<div><b>$16.20 express, Australia wide</b><span>One flat price, any size order</span></div></div>
@@ -280,7 +280,7 @@ home = f'''
     <div class="txt">
       <span class="eyebrow">Our story</span>
       <h2>Two sisters. Mum’s recipe.</h2>
-      <p>The Cookiee Club was started by sisters Ruby and Rachel. Rachel lives with severe food allergies, so from day one the rule has been simple: make cookies more people can enjoy, without anyone feeling left out.</p>
+      <p>Twelve Cookies was started by sisters Ruby and Rachel. Rachel lives with severe food allergies, so from day one the rule has been simple: make cookies more people can enjoy, without anyone feeling left out.</p>
       <p>That’s why our kitchen is nut and egg free, and why our gluten-free cookies are baked in their own space. Every order is baked for you, then packed by hand and posted Australia wide.</p>
     </div>
   </div>
@@ -301,7 +301,7 @@ home = f'''
       <li><b>Express post.</b><span>Usually 1 to 3 business days across Australia. One flat $16.20, whatever you order.</span></li>
       <li><b>We keep you posted.</b><span>An email when your order’s confirmed, when it’s in the oven and when it’s on its way.</span></li>
     </ol>
-    <figure class="arrive"><img src="img/real_packbox.jpg" alt="A Cookiee Club mailer opened to show hot pink tissue and a thank-you sticker" loading="lazy" width="1000" height="1000"></figure>
+    <figure class="arrive"><img src="img/real_packbox.jpg" alt="A Twelve Cookies mailer opened to show hot pink tissue and a thank-you sticker" loading="lazy" width="1000" height="1000"></figure>
   </div>
 </div></section>
 
@@ -318,7 +318,7 @@ home = f'''
   </div>
 </div></section>
 '''
-page('index.html', 'The Cookiee Club · Nut and egg free cookies, baked to order', home,
+page('index.html', 'Twelve Cookies · Nut and egg free cookies, baked to order', home,
      'Nut and egg free cookies baked to order by sisters Ruby and Rachel. Build a box of 6 or 12, posted Australia wide in 2 to 4 days.')
 
 # ---------- SHOP ----------
@@ -336,7 +336,7 @@ shop = f'''
   <div class="grid cards-2">{''.join(card(P[i], B) for i in order + ['moulds'])}</div>
 </section>
 '''
-page('shop.html', 'Shop the menu · The Cookiee Club', shop, 'Build your own box of 6 or 12, gluten free cookies, a kids box and more. Nut and egg free, posted Australia wide.', 'shop.html')
+page('shop.html', 'Shop the menu · Twelve Cookies', shop, 'Build your own box of 6 or 12, gluten free cookies, a kids box and more. Nut and egg free, posted Australia wide.', 'shop.html')
 
 # ---------- PRODUCT PAGES ----------
 for p in D['products']:
@@ -401,10 +401,10 @@ for p in D['products']:
 {sticky}
 '''
     ld = json.dumps({"@context": "https://schema.org", "@type": "Product", "name": p['name'], "description": p['intro'],
-                     "brand": {"@type": "Brand", "name": "The Cookiee Club"},
+                     "brand": {"@type": "Brand", "name": "Twelve Cookies"},
                      "offers": {"@type": "Offer", "priceCurrency": "AUD", "price": f'{p["price"]:.2f}',
                                 "availability": "https://schema.org/InStock" if p['stock'] == 'in' else "https://schema.org/OutOfStock"}})
-    page(f'products/{p["handle"]}.html', f'{p["name"]} · The Cookiee Club', body, f'{p["name"]}: {p["short"]}. {p["intro"]}', 'shop.html',
+    page(f'products/{p["handle"]}.html', f'{p["name"]} · Twelve Cookies', body, f'{p["name"]}: {p["short"]}. {p["intro"]}', 'shop.html',
          f'<script type="application/ld+json">{ld}</script>\n')
 
 # ---------- BUILDER ----------
@@ -438,12 +438,12 @@ builder = f'''
 </section>
 <div class="bar-m" aria-hidden="false"><div class="c"><b class="prog-n">0 of 6</b><div class="bar"><i></i></div></div><button class="btn red bld-add" type="button" disabled>Pick 6 more</button></div>
 '''
-page('build-a-box.html', 'Build a box · The Cookiee Club', builder, 'Build your own box of 6 or 12 nut and egg free cookies. Pick from 11 flavours, posted Australia wide.', 'build-a-box.html')
+page('build-a-box.html', 'Build a box · Twelve Cookies', builder, 'Build your own box of 6 or 12 nut and egg free cookies. Pick from 11 flavours, posted Australia wide.', 'build-a-box.html')
 
 # ---------- KITCHEN ----------
 kitchen = f'''
 <section class="page-head wrap"><span class="eyebrow">Our kitchen</span><h1>Made so more people can have one.</h1>
-<p>The Cookiee Club was started by sisters Ruby and Rachel, from their mum’s recipe. Rachel lives with severe food allergies, so from day one the rule has been simple: nobody gets left out of the cookie box.</p></section>
+<p>Twelve Cookies was started by sisters Ruby and Rachel, from their mum’s recipe. Rachel lives with severe food allergies, so from day one the rule has been simple: nobody gets left out of the cookie box.</p></section>
 <section class="wrap"><div class="split" style="padding-bottom:72px">
   <img src="img/s_ruby_koala.jpg" alt="Caramello Koala cookies cooling on a tray in Ruby’s kitchen" width="1536" height="1536" loading="lazy">
   <div class="txt"><h2>Two sisters, Mum’s recipe, a bigger team.</h2>
@@ -468,7 +468,7 @@ kitchen = f'''
   </div>
 </div></section>
 '''
-page('our-kitchen.html', 'Our kitchen and allergen guide · The Cookiee Club', kitchen, 'Nut and egg free kitchen, gluten free baked separately. The Cookiee Club allergen guide.', 'our-kitchen.html')
+page('our-kitchen.html', 'Our kitchen and allergen guide · Twelve Cookies', kitchen, 'Nut and egg free kitchen, gluten free baked separately. Twelve Cookies allergen guide.', 'our-kitchen.html')
 
 # ---------- DROPS ----------
 drops = f'''
@@ -481,16 +481,16 @@ drops = f'''
   <aside class="aside"><b>Get the drop emails</b><p>One email before each drop. Unsubscribe any time.</p><form class="inline-form" data-form="join" novalidate><label class="sr" for="dj">Email address</label><input id="dj" type="email" placeholder="Your email" required><button class="btn" type="submit">Sign up</button><p class="form-msg" aria-live="polite" style="flex-basis:100%;margin-top:10px"></p></form></aside>
 </div></section>
 '''
-page('drops.html', 'Drops and calendar · The Cookiee Club', drops, 'Christmas early release, the Perth pop-up and 50 advent calendars.', 'drops.html')
+page('drops.html', 'Drops and calendar · Twelve Cookies', drops, 'Christmas early release, the Perth pop-up and 50 advent calendars.', 'drops.html')
 
 # ---------- HELP PAGES ----------
 DRAFT = '<div class="draft">Draft for Ruby and Rachel to review.</div>'
-page('faq.html', 'Help and FAQ · The Cookiee Club', f'''
+page('faq.html', 'Help and FAQ · Twelve Cookies', f'''
 <section class="page-head wrap"><span class="eyebrow">Help</span><h1>Questions, answered.</h1><p>Can’t find it here? <a class="link" href="contact.html">Message us</a>.</p></section>
 <section class="wrap two-col">{faq_html(FAQS, '')}<aside class="aside"><b>Quick links</b><a class="link" href="delivery.html">Delivery &amp; shipping</a><a class="link" href="refunds.html">Refunds &amp; damaged orders</a><a class="link" href="our-kitchen.html#allergens">Allergen guide</a><a class="link" href="contact.html">Contact us</a></aside></section>''',
      'Delivery times, allergens, shipping costs, refunds and more.', 'faq.html')
 
-page('delivery.html', 'Delivery and shipping · The Cookiee Club', f'''
+page('delivery.html', 'Delivery and shipping · Twelve Cookies', f'''
 <section class="page-head wrap"><span class="eyebrow">Help</span><h1>Delivery &amp; shipping.</h1></section>
 <section class="wrap prose">{DRAFT}
 <table><tbody><tr><th>Where</th><td>Anywhere in Australia. We don’t ship overseas.</td></tr>
@@ -504,7 +504,7 @@ page('delivery.html', 'Delivery and shipping · The Cookiee Club', f'''
 <h2>Wrong address?</h2><p>Message us straight away. We can usually fix a typo before your order is posted, but not after.</p></section>''',
      'Express post Australia wide for $16.20 flat. Baked to order and posted in 2 to 4 business days.')
 
-page('refunds.html', 'Refunds and damaged orders · The Cookiee Club', f'''
+page('refunds.html', 'Refunds and damaged orders · Twelve Cookies', f'''
 <section class="page-head wrap"><span class="eyebrow">Help</span><h1>Refunds &amp; damaged orders.</h1></section>
 <section class="wrap prose">{DRAFT}
 <h2>Change of mind</h2><p>Every cookie is baked for your order, so we don’t offer refunds if you simply change your mind.</p>
@@ -514,7 +514,7 @@ page('refunds.html', 'Refunds and damaged orders · The Cookiee Club', f'''
 <p><a class="btn" href="contact.html">Report a problem</a></p></section>''',
      'Change-of-mind, damaged cookies and lost parcels: how we put it right.')
 
-page('contact.html', 'Contact us · The Cookiee Club', f'''
+page('contact.html', 'Contact us · Twelve Cookies', f'''
 <section class="page-head wrap"><span class="eyebrow">Help</span><h1>Get in touch.</h1><p>The fastest way to reach us about an order. We’ll get back to you as soon as we can.</p></section>
 <section class="wrap two-col">
 <form class="form" data-form="contact" novalidate>
@@ -526,9 +526,9 @@ page('contact.html', 'Contact us · The Cookiee Club', f'''
   <div class="full"><button class="btn red" type="submit">Send message</button><p class="form-msg" aria-live="polite" style="margin-top:12px"></p></div>
 </form>
 <aside class="aside"><b>Corporate and events</b><p><a class="link" href="corporate.html">Send an enquiry</a></p><b>Quick answers</b><p><a class="link" href="faq.html">Help and FAQ</a></p></aside>
-</section>''', 'Contact The Cookiee Club about an order, allergens or a delivery date.')
+</section>''', 'Contact Twelve Cookies about an order, allergens or a delivery date.')
 
-page('corporate.html', 'Corporate and events · The Cookiee Club', f'''
+page('corporate.html', 'Corporate and events · Twelve Cookies', f'''
 <section class="page-head wrap"><span class="eyebrow">Corporate &amp; events</span><h1>Cookies for a crowd.</h1><p>Team thank-yous, client gifts and events. We bake in small batches, so tell us your date and numbers and we’ll reply honestly with what’s possible.</p></section>
 <section class="wrap two-col">
 <form class="form" data-form="corporate" novalidate>
@@ -543,21 +543,21 @@ page('corporate.html', 'Corporate and events · The Cookiee Club', f'''
   <div class="full"><button class="btn red" type="submit">Send enquiry</button><p class="form-msg" aria-live="polite" style="margin-top:12px"></p></div>
 </form>
 <aside class="aside"><b>Good to know</b><p>Nut and egg free, so they’re safe for more of the office.</p><p>The shop closes 16 November to 6 December. Ask early for Christmas.</p></aside>
-</section>''', 'Corporate gifts and event orders from The Cookiee Club.')
+</section>''', 'Corporate gifts and event orders from Twelve Cookies.')
 
-page('privacy.html', 'Privacy · The Cookiee Club', f'''<section class="page-head wrap"><h1>Privacy.</h1></section><section class="wrap prose"><div class="draft">Placeholder. The live site uses Ruby’s existing Shopify privacy policy.</div><p>We collect what we need to bake and post your order and, if you join the club, to email you about drops and restocks. We never sell your details.</p></section>''', 'Privacy policy.')
-page('terms.html', 'Terms · The Cookiee Club', f'''<section class="page-head wrap"><h1>Terms.</h1></section><section class="wrap prose"><div class="draft">Placeholder for Shopify’s terms of service, to be written and approved by Ruby and Rachel.</div></section>''', 'Terms of service.')
+page('privacy.html', 'Privacy · Twelve Cookies', f'''<section class="page-head wrap"><h1>Privacy.</h1></section><section class="wrap prose"><div class="draft">Placeholder. The live site uses Ruby’s existing Shopify privacy policy.</div><p>We collect what we need to bake and post your order and, if you join the club, to email you about drops and restocks. We never sell your details.</p></section>''', 'Privacy policy.')
+page('terms.html', 'Terms · Twelve Cookies', f'''<section class="page-head wrap"><h1>Terms.</h1></section><section class="wrap prose"><div class="draft">Placeholder for Shopify’s terms of service, to be written and approved by Ruby and Rachel.</div></section>''', 'Terms of service.')
 
 # ---------- CART / CHECKOUT / 404 / NOTES ----------
-page('cart.html', 'Your cart · The Cookiee Club', '<section class="page-head wrap"><h1>Your box.</h1></section><section class="wrap" id="cart-page" style="padding-bottom:88px"></section>', 'Your cart.')
-page('checkout.html', 'Checkout · The Cookiee Club', '''<section class="page-head wrap"><span class="eyebrow">Concept</span><h1>Shopify checkout goes here.</h1><p>On the live store this button opens Shopify’s checkout: Shop Pay, Apple Pay, Google Pay, PayPal, Afterpay and cards. Nothing is charged in this concept.</p></section>
+page('cart.html', 'Your cart · Twelve Cookies', '<section class="page-head wrap"><h1>Your box.</h1></section><section class="wrap" id="cart-page" style="padding-bottom:88px"></section>', 'Your cart.')
+page('checkout.html', 'Checkout · Twelve Cookies', '''<section class="page-head wrap"><span class="eyebrow">Concept</span><h1>Shopify checkout goes here.</h1><p>On the live store this button opens Shopify’s checkout: Shop Pay, Apple Pay, Google Pay, PayPal, Afterpay and cards. Nothing is charged in this concept.</p></section>
 <section class="wrap two-col"><div class="aside" id="checkout-summary"></div><aside class="aside"><b>What happens next</b><p>1. Order confirmation email.</p><p>2. “In the oven” email when we start baking.</p><p>3. Tracking email when it’s posted.</p><a class="btn line" href="cart.html">Back to cart</a></aside></section>''', 'Checkout.')
-page('404.html', 'Page not found · The Cookiee Club', '<section class="page-head wrap"><h1>This one crumbled.</h1><p>The page you wanted isn’t here.</p><p style="margin-top:24px"><a class="btn" href="/index.html">Back to the menu</a></p></section>', 'Not found.')
+page('404.html', 'Page not found · Twelve Cookies', '<section class="page-head wrap"><h1>This one crumbled.</h1><p>The page you wanted isn’t here.</p><p style="margin-top:24px"><a class="btn" href="/index.html">Back to the menu</a></p></section>', 'Not found.')
 print('built', len(D['products']), 'products')
 
 # ---------- CONCEPT NOTES ----------
 notes = '''
-<section class="page-head wrap"><span class="eyebrow">A concept by The Service Edit</span><h1>About this concept.</h1><p>A full working preview of a new Cookiee Club website, built in your look with your real products, prices, flavours and photos. Click through anything: the menu, the box builder, the cart and every help page.</p></section>
+<section class="page-head wrap"><span class="eyebrow">A concept by The Service Edit</span><h1>About this concept.</h1><p>A full working preview of a new Twelve Cookies website, built in your look with your real products, prices, flavours and photos. Click through anything: the menu, the box builder, the cart and every help page.</p></section>
 <section class="wrap prose">
 <h2>What it does</h2>
 <ul>
@@ -575,6 +575,6 @@ notes = '''
 <p>This is a preview: nothing here takes real orders, forms don’t send, and stock is set by hand. On Shopify, the cart, stock, checkout and Afterpay all run from your store, and the restock can open automatically at 7pm.</p>
 <p><a class="btn" href="index.html">Back to the site</a></p>
 </section>'''
-page('notes.html', 'About this concept · The Cookiee Club', notes, 'A concept website for The Cookiee Club by The Service Edit.')
+page('notes.html', 'About this concept · Twelve Cookies', notes, 'A concept website for Twelve Cookies by The Service Edit.')
 print('notes built')
 exec(open(os.path.join(ROOT, 'states.py')).read())

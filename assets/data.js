@@ -1,4 +1,4 @@
-/* The Cookiee Club: catalogue for the v2 concept.
+/* Twelve Cookies: catalogue for the v2 concept.
    Prices match thecookieeclub.com on 27 Oct 2026; flavour lists as of 12 Oct 2026.
    Stock states are demo values: in Shopify they come from inventory. */
 window.TCC = {
@@ -33,7 +33,7 @@ window.TCC = {
 
     { id: 'xmas', handle: 'early-christmas-release', name: 'Early Christmas Release', short: '2 new Christmas flavours + 2 favourites', cookies: 4,
       price: 30, stock: 'in', badge: '26 Oct to 4 Nov only', badgeDark: true, group: ['specials'],
-      fixed: ['gingerbread-white-choc', 'santas-mix'], fixedNote: 'Plus two of our rotating Cookiee Club favourites.',
+      fixed: ['gingerbread-white-choc', 'santas-mix'], fixedNote: 'Plus two of our rotating favourites.',
       imgs: ['xmas_1', 'xmas_0', 'xmas_2'],
       intro: 'A sneak peek at Christmas: two brand new festive flavours, Gingerbread White Chocolate and Santa’s Mix, plus two of our rotating favourites.',
       alt: ['Four Santa’s Mix cookies with red and green M&M’s and sprinkles', 'A hand holding a Gingerbread White Chocolate cookie', 'Three Gingerbread White Chocolate cookies on a board'] },
